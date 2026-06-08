@@ -160,7 +160,7 @@ You can continue with the rest of the lab setup in this VM that was just created
 
 ## Enable Audit & Sensitivity Labeling for Containers
 
-The PowerShell toolkit in [`scripts/`](../scripts/) configures every foundational Purview tenant setting in a single, idempotent run:
+The PowerShell toolkit in [`scripts/`](scripts/) configures every foundational Purview tenant setting in a single, idempotent run:
 
 - Unified Audit Log ingestion (Exchange Online)
 - SharePoint sensitivity-label support (`EnableAIPIntegration`)
@@ -207,20 +207,17 @@ References:
 
 ### Option 2 — PowerShell orchestrator (recommended)
 
-The orchestrator at [`scripts/Deploy-PurviewBestPractice.ps1`](../scripts/Deploy-PurviewBestPractice.ps1) signs in to Exchange Online, Security & Compliance, SharePoint Online, and Microsoft Graph (Beta), then applies every tenant setting listed above in one pass. All features run unconditionally — there are no opt-in switches.
+The orchestrator at [`scripts/Deploy-PurviewBestPractice.ps1`](scripts/Deploy-PurviewBestPractice.ps1) signs in to Exchange Online, Security & Compliance, SharePoint Online, and Microsoft Graph (Beta), then applies every tenant setting listed above in one pass. All features run unconditionally — there are no opt-in switches.
 
 #### Layout
 
-```
-scripts/
-├── Deploy-PurviewBestPractice.ps1     ← entry point
-├── Config/
-│   └── PurviewConfig.psd1             ← four tenant-setting toggles (all $true by default)
-└── Modules/
-    ├── Connect-PurviewServices.ps1    ← EXO + IPPS + SPO + Graph (Beta) sign-in
-    ├── Setup-TenantSettings.ps1       ← applies the settings
-    └── Invoke-WithTransientRetry.ps1  ← shared retry helper
-```
+- [`scripts/Deploy-PurviewBestPractice.ps1`](scripts/Deploy-PurviewBestPractice.ps1) — entry point (orchestrator).
+- [`scripts/Config/`](scripts/Config/)
+  - [`PurviewConfig.psd1`](scripts/Config/PurviewConfig.psd1) — four tenant-setting toggles (all `$true` by default).
+- [`scripts/Modules/`](scripts/Modules/)
+  - [`Connect-PurviewServices.ps1`](scripts/Modules/Connect-PurviewServices.ps1) — EXO + IPPS + SPO + Graph (Beta) sign-in.
+  - [`Setup-TenantSettings.ps1`](scripts/Modules/Setup-TenantSettings.ps1) — applies the settings.
+  - [`Invoke-WithTransientRetry.ps1`](scripts/Modules/Invoke-WithTransientRetry.ps1) — shared retry helper.
 
 #### Prerequisites
 
@@ -286,7 +283,7 @@ A summary block prints when the run completes, e.g.:
 | `-NonInteractive` | Skip the y/N confirmation prompt (CI / unattended runs). |
 | `-AutoInstallModules` | Install `ExchangeOnlineManagement`, `Microsoft.Online.SharePoint.PowerShell`, and `Microsoft.Graph.*` modules to `CurrentUser` scope without prompting. |
 | `-SharePointAdminUrl <url>` | Override the auto-derived SPO admin URL (rare — only needed for multi-geo / vanity domains). |
-| `-ConfigPath <path>` | Use a custom `PurviewConfig.psd1` (defaults to `.\Config\PurviewConfig.psd1`). |
+| `-ConfigPath <path>` | Use a custom [`PurviewConfig.psd1`](scripts/Config/PurviewConfig.psd1) (defaults to `.\Config\PurviewConfig.psd1`). |
 
 #### Synchronize labels to Microsoft Entra ID
 
