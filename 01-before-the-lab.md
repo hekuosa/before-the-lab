@@ -1,22 +1,3 @@
-# Create and set up your Microsoft 365 Developer subscription (E5)
-
-## Activate Microsoft AI Cloud Partner Program Visual Studio benefits (Partner Center) 
-
-1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard/home) and select **Benefits**.
-2. On the **Developer Tools** tab, select **Visual Studio subscriptions benefits**.
-
-   ![Developer tools page in Partner Center showing the Visual Studio subscriptions benefits tile](images/before-the-lab-developer-subscription-001-a94efc68.png)
-
-3. To assign a user the Visual Studio benefit, select the Visual Studio benefit you want to activate. On the wizard pane, on the **Activate benefits** tab, select a user, then select **Assign user**. If the user isn't in the list, you can [add new users](https://learn.microsoft.com/en-us/partner-center/account-settings/create-user-accounts-and-set-permissions) in **Account settings**.
-4. Repeat this process for each subscription you want to assign. Users can manage their subscriptions in the Visual Studio portal:
-   - **View all assigned users** — select the **View and remove assigned users** tab.
-   - **Remove a user** — on the same tab, select **Remove** next to the user's name.
-   - **Reassign a subscription** — select **Reassign user**. This option only appears 90 days after the subscription was activated. See the [Microsoft Partner Programs Guide](https://aka.ms/partner-benefits-use-guide) for details.
-
-### How users access these benefits
-
-1. Partner Program admins in Partner Center assign Visual Studio Enterprise IDE licenses to users. Once assigned, users activate and sign in to the IDE with their work email.
-2. The [Visual Studio subscriptions portal](https://my.visualstudio.com/) is the access portal for Visual Studio-related Partner Program benefits. The benefits available are defined by Partner Program eligibility, not by Visual Studio subscription tier.
 
 ## Create your Microsoft 365 Developer subscription (E5)
 
@@ -61,72 +42,6 @@ Use a dedicated Edge profile for this lab to avoid conflicts with InPrivate brow
 
     > **Note:** Come back to this guide when you need more user profiles for your demo users.
 
-# Install Hyper-V on Windows 11 (optional)
-
-You can skip this if you prefer to use a physical machine for the lab, but using a VM lets you keep your host machine clean and easily reset the environment if needed.
-
-## Prerequisites
-
-### Check installed RAM
-
-1. Open **Command Prompt**.
-2. Type `systeminfo` and press Enter.
-3. Scroll down to **Installed Physical Memory (RAM)** and check the amount installed. You need at least **16 GB**. You can proceed with less, but may encounter performance issues.
-
-### Check available disk space
-
-1. Open **File Explorer** (Windows + E).
-2. Under **This PC**, right-click **Local Disk (C:)** and select **Properties**. Free space should be at least **100 GB**.
-
-### Install Hyper-V on Windows 11
-
-1. Open the **Control Panel**.
-2. Select **Programs**, then **Programs and Features**.
-3. Select **Turn Windows features on or off**.
-4. Select **Hyper-V**, then select **OK**.
-5. When the installation completes, you'll be prompted to restart your computer.
-
-## Create a virtual machine
-
-### Download the Windows 11 image (ISO)
-
-Go to the [Visual Studio subscriptions portal](https://my.visualstudio.com/) from your work profile, or sign in with your corporate credentials.
-
-1. Select **Downloads**.
-2. Enter **Windows 11 business** in the search bar.
-3. Download the most recent version and note where you saved it.
-
-### Create the virtual machine
-
-1. **Open Hyper-V Manager.** In the **Actions** pane, select **New** → **Virtual Machine**.
-2. **Set the virtual machine name** — enter a name, for example `lab-vm`.
-3. **Select generation** — choose **Generation 2**.
-4. **Configure memory** — set startup memory to **8000–12000 MB** and keep **Use Dynamic Memory** enabled (this lets the VM use only the memory it needs).
-5. **Configure networking** — select **Default Switch**.
-6. **Configure virtual hard disk** — leave the default settings.
-7. **Install operating system** — select **Install an operating system from a bootable image file**, then **Browse** and select the Windows 11 ISO you just downloaded.
-8. **Complete VM creation** — review the summary and select **Finish**.
-
-### Configure TPM (required for Windows 11)
-
-1. Right-click the VM and select **Settings**.
-2. Select **Security** in the left pane, check **Enable Trusted Platform Module**, and select **OK**.
-
-### Start the virtual machine and install Windows
-
-1. Right-click the VM and select **Connect**.
-2. In the VM window, select **Action** → **Start**.
-3. **Boot from ISO** — immediately press any key when prompted to boot from the ISO. If you see PXE boot text:
-   - Select **Reset** and confirm.
-   - Try again and press a key quickly (it might take a few attempts).
-4. **Start Windows installation** — continue once the Windows setup screen appears, and select **Windows 11 Enterprise** when asked which version to install.
-
-Then sign in to the VM with your user.
-
-# Continue lab setup
-
-You can continue with the rest of the lab setup in this VM that was just created, or using the Edge profile. 
-
 ## M365 Groups Setup
 
 ### Create a Microsoft 365 group "HR"
@@ -148,8 +63,6 @@ You can continue with the rest of the lab setup in this VM that was just created
    ![New Microsoft 365 group settings with HR email, Private, and Teams enabled](images/before-the-lab-developer-subscription-011-0ddf895a.png)
 
 8. Review the settings, then select **Create group**.
-
-> **Verify:** in **Active teams & groups**, the **HR** group appears with type Microsoft 365 group and privacy Private.
 
 ### Edit M365 Group U.S. Sales
 
