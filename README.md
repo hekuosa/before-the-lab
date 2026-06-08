@@ -1,10 +1,11 @@
 # Before the Lab
 
-Word version of the **Before the Lab** guide from the Data Security Hack, with the PowerShell tenant-baseline toolkit it references.
+Markdown version of the **Before the Lab** guide from the Data Security Hack, with the PowerShell tenant-baseline toolkit it references.
 
 ## Contents
 
-- `01-before-the-lab.docx` — the lab pre-work guide (Word).
+- `01-before-the-lab.md` — the lab pre-work guide (Markdown, renders on GitHub).
+- `images/` — screenshots referenced by the guide.
 - `scripts/` — Purview tenant-baseline toolkit.
   - `Deploy-PurviewBestPractice.ps1` — orchestrator (entry point).
   - `Config/PurviewConfig.psd1` — tenant-setting toggles.
@@ -19,4 +20,4 @@ cd scripts
 .\Deploy-PurviewBestPractice.ps1
 ```
 
-See `01-before-the-lab.docx` for parameters and prerequisites.
+See `01-before-the-lab.md` for parameters and prerequisites.
