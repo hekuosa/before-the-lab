@@ -120,55 +120,38 @@ References:
 
 ### Option 2 — PowerShell orchestrator (recommended)
 
-The orchestrator at [`scripts/Deploy-TenantBaseline.ps1`](scripts/Deploy-TenantBaseline.ps1) signs in to Exchange Online, Security & Compliance, SharePoint Online, and Microsoft Graph (Beta), then applies every tenant setting listed above in one pass. All features run unconditionally — there are no opt-in switches.
-
-#### Layout
-
-- [`scripts/Deploy-TenantBaseline.ps1`](scripts/Deploy-TenantBaseline.ps1) — entry point (orchestrator).
-- [`scripts/Config/`](scripts/Config/)
-  - [`PurviewConfig.psd1`](scripts/Config/PurviewConfig.psd1) — four tenant-setting toggles (all `$true` by default).
-- [`scripts/Modules/`](scripts/Modules/)
-  - [`Connect-PurviewServices.ps1`](scripts/Modules/Connect-PurviewServices.ps1) — EXO + IPPS + SPO + Graph (Beta) sign-in.
-  - [`Setup-TenantSettings.ps1`](scripts/Modules/Setup-TenantSettings.ps1) — applies the settings.
-  - [`Invoke-WithTransientRetry.ps1`](scripts/Modules/Invoke-WithTransientRetry.ps1) — shared retry helper.
-
 #### Prerequisites
 
 - **PowerShell 7+** (`pwsh.exe`). Windows PowerShell 5.1 is not supported — the script hard-fails with an install hint. Install via:
    ```powershell
    winget install --id Microsoft.PowerShell --source winget
    ```
-- A **tenant admin account** (Global Administrator, or a combination of Compliance Administrator + SharePoint Administrator + Groups Administrator). The deploy admin you created earlier (e.g. `admin@<yourtenant>.onmicrosoft.com`) is fine.
+- A **tenant admin account** (Global Administrator, or a combination of Compliance Administrator + SharePoint Administrator + Groups Administrator). Use the tenant that was created earlier ( `admin@<yourtenant>.onmicrosoft.com`).
 
+- Clone this repo or download scripts folder
+- 
 #### Run a dry-run first (recommended)
 
 Open a **fresh `pwsh` window** and preview the changes without touching the tenant:
 
 ```powershell
 cd <repo-root>\scripts
-.\Deploy-TenantBaseline.ps1 `
-    -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com `
-    -AutoInstallModules `
-    -WhatIf
+.\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules  -WhatIf
 ```
 
 You will see four browser sign-in prompts (EXO, IPPS, SPO, Graph). Choose **No, this app only** when prompted "Stay signed in to all your apps".
 
 ![Microsoft sign-in prompt with "No, this app only" highlighted](images/before-the-lab-developer-subscription-013-1f2345a1.png)
 
-`-WhatIf` skips the y/N confirmation prompt and emits `What if: Performing the operation ...` lines for each setting that would change. Settings that are already in the desired state are reported as `Already enabled.` and not flagged.
-
 #### Apply the changes
 
 Re-run the same command without `-WhatIf`:
 
 ```powershell
-.\Deploy-TenantBaseline.ps1 `
-    -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com `
-    -AutoInstallModules
+cd <repo-root>\scripts
+.\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules
 ```
-
-You will be asked to confirm `Proceed with deployment? [y/N]` (suppress with `-NonInteractive`). The script then:
+You will be asked to confirm `Proceed with deployment? [y/N]`. The script then:
 
 1. Enables Unified Audit Log ingestion (idempotent — skipped if already on).
 2. Enables `EnableAIPIntegration` on SharePoint Online.
@@ -185,25 +168,3 @@ A summary block prints when the run completes, e.g.:
   Tenant settings        OK
 ==============================================================================
 ```
-
-> **Verify:** in Microsoft Purview > **Information protection** > **Sensitivity labels**, you can edit a label and the **Groups & sites** scope is selectable. (The first label is created in [Phase 2](02-lab-guide.md).)
-
-#### Optional parameters
-
-| Parameter | Purpose |
-|---|---|
-| `-WhatIf` | Preview every change without applying. |
-| `-NonInteractive` | Skip the y/N confirmation prompt (CI / unattended runs). |
-| `-AutoInstallModules` | Install `ExchangeOnlineManagement`, `Microsoft.Online.SharePoint.PowerShell`, and `Microsoft.Graph.*` modules to `CurrentUser` scope without prompting. |
-| `-SharePointAdminUrl <url>` | Override the auto-derived SPO admin URL (rare — only needed for multi-geo / vanity domains). |
-| `-ConfigPath <path>` | Use a custom [`PurviewConfig.psd1`](scripts/Config/PurviewConfig.psd1) (defaults to `.\Config\PurviewConfig.psd1`). |
-
-#### Synchronize labels to Microsoft Entra ID
-
-The orchestrator does not run `Execute-AzureAdLabelSync` automatically because no labels exist yet at this point in the lab. After you create the first sensitivity label in [Phase 2](02-lab-guide.md), run it once from a Security & Compliance PowerShell session:
-
-```powershell
-Connect-IPPSSession -UserPrincipalName admin@<yourtenant>.onmicrosoft.com
-Execute-AzureAdLabelSync
-```
-
