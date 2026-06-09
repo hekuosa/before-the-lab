@@ -129,7 +129,7 @@ References:
 - A **tenant admin account** (Global Administrator, or a combination of Compliance Administrator + SharePoint Administrator + Groups Administrator). Use the tenant that was created earlier ( `admin@<yourtenant>.onmicrosoft.com`).
 
 - Clone this repo or download scripts folder
-- 
+  
 #### Run a dry-run first (recommended)
 
 Open a **fresh `pwsh` window** and preview the changes without touching the tenant:
