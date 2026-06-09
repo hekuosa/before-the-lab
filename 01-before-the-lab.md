@@ -120,11 +120,11 @@ References:
 
 ### Option 2 — PowerShell orchestrator (recommended)
 
-The orchestrator at [`scripts/Deploy-PurviewBestPractice.ps1`](scripts/Deploy-PurviewBestPractice.ps1) signs in to Exchange Online, Security & Compliance, SharePoint Online, and Microsoft Graph (Beta), then applies every tenant setting listed above in one pass. All features run unconditionally — there are no opt-in switches.
+The orchestrator at [`scripts/Deploy-TenantBaseline.ps1`](scripts/Deploy-TenantBaseline.ps1) signs in to Exchange Online, Security & Compliance, SharePoint Online, and Microsoft Graph (Beta), then applies every tenant setting listed above in one pass. All features run unconditionally — there are no opt-in switches.
 
 #### Layout
 
-- [`scripts/Deploy-PurviewBestPractice.ps1`](scripts/Deploy-PurviewBestPractice.ps1) — entry point (orchestrator).
+- [`scripts/Deploy-TenantBaseline.ps1`](scripts/Deploy-TenantBaseline.ps1) — entry point (orchestrator).
 - [`scripts/Config/`](scripts/Config/)
   - [`PurviewConfig.psd1`](scripts/Config/PurviewConfig.psd1) — four tenant-setting toggles (all `$true` by default).
 - [`scripts/Modules/`](scripts/Modules/)
@@ -146,7 +146,7 @@ Open a **fresh `pwsh` window** and preview the changes without touching the tena
 
 ```powershell
 cd <repo-root>\scripts
-.\Deploy-PurviewBestPractice.ps1 `
+.\Deploy-TenantBaseline.ps1 `
     -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com `
     -AutoInstallModules `
     -WhatIf
@@ -163,7 +163,7 @@ You will see four browser sign-in prompts (EXO, IPPS, SPO, Graph). Choose **No, 
 Re-run the same command without `-WhatIf`:
 
 ```powershell
-.\Deploy-PurviewBestPractice.ps1 `
+.\Deploy-TenantBaseline.ps1 `
     -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com `
     -AutoInstallModules
 ```

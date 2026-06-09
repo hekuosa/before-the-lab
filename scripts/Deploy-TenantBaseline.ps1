@@ -55,10 +55,10 @@
                                                           and Microsoft Graph (Beta) connection.
 
 .EXAMPLE
-    .\Deploy-PurviewBestPractice.ps1 -TenantAdminUpn admin@contoso.onmicrosoft.com
+    .\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@contoso.onmicrosoft.com
 
 .EXAMPLE
-    .\Deploy-PurviewBestPractice.ps1 -TenantAdminUpn admin@contoso.onmicrosoft.com -WhatIf
+    .\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@contoso.onmicrosoft.com -WhatIf
 #>
 [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'None')]
 param(
