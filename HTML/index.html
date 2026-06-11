@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before the Lab | Microsoft Purview</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f3f2f1; color: #323130; min-height: 100vh; }
+
+  .header { background: #0078d4; color: white; padding: 16px 32px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 10; }
+  .header h1 { font-size: 18px; font-weight: 600; }
+  .header p { font-size: 13px; opacity: 0.85; margin-top: 2px; }
+
+  .main { display: grid; grid-template-columns: 300px 1fr; min-height: calc(100vh - 70px); }
+
+  .nav-panel { background: white; border-right: 1px solid #edebe9; overflow-y: auto; max-height: calc(100vh - 70px); position: sticky; top: 70px; }
+  .nav-section { padding: 18px 20px; border-bottom: 1px solid #edebe9; }
+  .nav-section h2 { font-size: 11px; font-weight: 700; color: #0078d4; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 12px; }
+  .nav-list { list-style: none; }
+  .nav-item { padding: 9px 12px; font-size: 13px; color: #323130; cursor: pointer; border-radius: 3px; margin-bottom: 3px; line-height: 1.35; border-left: 3px solid transparent; transition: background 0.1s, border-color 0.1s; }
+  .nav-item:hover { background: #f3f2f1; }
+  .nav-item.active { background: #eff6fc; border-left-color: #0078d4; color: #0078d4; font-weight: 600; }
+  .nav-item .num { display: inline-block; width: 22px; color: #8a8886; font-weight: 700; font-size: 11px; }
+  .nav-item.active .num { color: #0078d4; }
+
+  .output-panel { padding: 32px; overflow-y: auto; max-height: calc(100vh - 70px); }
+  .doc-paper { background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.12); max-width: 920px; margin: 0 auto; padding: 56px 64px; border-radius: 4px; min-height: 60vh; }
+
+  .doc-paper h1 { font-size: 26px; font-weight: 700; color: #0078d4; border-bottom: 3px solid #0078d4; padding-bottom: 14px; margin-bottom: 24px; }
+  .doc-paper h2 { font-size: 18px; font-weight: 700; color: #0078d4; border-left: 3px solid #0078d4; padding-left: 12px; margin: 28px 0 14px; }
+  .doc-paper h3 { font-size: 15px; font-weight: 700; color: #323130; margin: 20px 0 8px; }
+  .doc-paper h4 { font-size: 13px; font-weight: 700; color: #605e5c; margin: 16px 0 6px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .doc-paper p { font-size: 14px; line-height: 1.7; color: #323130; margin-bottom: 12px; }
+  .doc-paper ul, .doc-paper ol { padding-left: 22px; margin-bottom: 14px; }
+  .doc-paper li { font-size: 14px; line-height: 1.7; color: #323130; margin-bottom: 4px; }
+  .doc-paper ul li::marker { color: #0078d4; }
+  .doc-paper ol li::marker { color: #0078d4; font-weight: 700; }
+  .doc-paper a { color: #0078d4; text-decoration: none; }
+  .doc-paper a:hover { text-decoration: underline; }
+  .doc-paper code { background: #f3f2f1; padding: 2px 6px; border-radius: 3px; font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 12.5px; color: #a4262c; }
+  .doc-paper pre { background: #1e1e1e; color: #d4d4d4; padding: 14px 18px; border-radius: 4px; overflow-x: auto; margin-bottom: 14px; font-size: 12.5px; line-height: 1.5; }
+  .doc-paper pre code { background: none; color: inherit; padding: 0; }
+  .doc-paper blockquote { background: #eff6fc; border-left: 4px solid #0078d4; padding: 12px 16px; margin: 14px 0; border-radius: 0 4px 4px 0; font-size: 13px; color: #323130; }
+  .doc-paper blockquote p { margin-bottom: 0; }
+  .doc-paper img { max-width: 100%; height: auto; margin: 16px 0; border: 1px solid #edebe9; border-radius: 4px; display: block; }
+  .doc-paper table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 14px 0; }
+  .doc-paper table th { background: #0078d4; color: white; padding: 9px 12px; text-align: left; font-weight: 600; }
+  .doc-paper table td { padding: 9px 12px; border-bottom: 1px solid #edebe9; color: #323130; vertical-align: top; }
+  .doc-paper table tr:nth-child(even) td { background: #f9f8f7; }
+  .doc-paper hr { border: none; border-top: 1px solid #edebe9; margin: 24px 0; }
+  .doc-paper strong { color: #323130; font-weight: 700; }
+
+  .placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60vh; color: #8a8886; text-align: center; gap: 12px; }
+  .placeholder h3 { font-size: 16px; font-weight: 400; }
+  .loading { color: #8a8886; font-size: 13px; padding: 20px; }
+  .error { background: #fce4e4; border-left: 4px solid #d13438; padding: 14px 18px; border-radius: 0 4px 4px 0; color: #a4262c; font-size: 13px; }
+
+  @media (max-width: 900px) {
+    .main { grid-template-columns: 1fr; }
+    .nav-panel { position: static; max-height: none; }
+    .doc-paper { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <svg width="28" height="28" viewBox="0 0 32 32">
+    <rect x="1" y="1" width="14" height="14" fill="#f25022"/>
+    <rect x="17" y="1" width="14" height="14" fill="#7fba00"/>
+    <rect x="1" y="17" width="14" height="14" fill="#00a4ef"/>
+    <rect x="17" y="17" width="14" height="14" fill="#ffb900"/>
+  </svg>
+  <div>
+    <h1>Before the Lab — Setup Guide</h1>
+    <p>Microsoft Purview · Data Security Hack pre-lab</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <nav class="nav-panel">
+    <div class="nav-section">
+      <h2>Setup steps</h2>
+      <ul class="nav-list" id="navList"></ul>
+    </div>
+  </nav>
+
+  <div class="output-panel">
+    <div class="doc-paper" id="docPaper">
+      <div class="placeholder">
+        <h3>Select a step from the left to begin</h3>
+        <p>Each step prepares your tenant for the Data Security Hack lab.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const DOCS = [
+    { group: 'Setup steps', num: '00', title: 'Overview',                          file: '../docs/00-overview.md',                          dir: '../docs/' },
+    { group: 'Setup steps', num: '01', title: 'Assign Visual Studio licenses',     file: '../docs/01-assign-visual-studio-licenses.md',     dir: '../docs/' },
+    { group: 'Setup steps', num: '02', title: 'Set up the developer subscription', file: '../docs/02-set-up-developer-subscription.md',     dir: '../docs/' },
+    { group: 'Setup steps', num: '03', title: 'Prepare the developer subscription',file: '../docs/03-prepare-the-developer-subscription.md',dir: '../docs/' }
+  ];
+
+  const navList = document.getElementById('navList');
+  const docPaper = document.getElementById('docPaper');
+
+  // Build nav with grouped sections
+  const groups = {};
+  DOCS.forEach((d, i) => {
+    (groups[d.group] = groups[d.group] || []).push({ ...d, idx: i });
+  });
+  const navPanel = document.querySelector('.nav-panel');
+  navPanel.innerHTML = '';
+  Object.keys(groups).forEach(groupName => {
+    const section = document.createElement('div');
+    section.className = 'nav-section';
+    const h2 = document.createElement('h2');
+    h2.textContent = groupName;
+    section.appendChild(h2);
+    const ul = document.createElement('ul');
+    ul.className = 'nav-list';
+    groups[groupName].forEach(d => {
+      const li = document.createElement('li');
+      li.className = 'nav-item';
+      li.dataset.idx = d.idx;
+      li.innerHTML = d.num ? `<span class="num">${d.num}</span>${d.title}` : `<span class="num">·</span>${d.title}`;
+      li.addEventListener('click', () => loadDoc(d.idx));
+      ul.appendChild(li);
+    });
+    section.appendChild(ul);
+    navPanel.appendChild(section);
+  });
+
+  async function loadDoc(i) {
+    document.querySelectorAll('.nav-item').forEach(el => {
+      el.classList.toggle('active', Number(el.dataset.idx) === i);
+    });
+    docPaper.innerHTML = '<div class="loading">Loading…</div>';
+    try {
+      const doc = DOCS[i];
+      const res = await fetch(doc.file);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      let md = await res.text();
+      const html = marked.parse(md);
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      // Resolve relative refs: strip '../' then prefix with doc.dir (where this doc lives)
+      tmp.querySelectorAll('[href], [src]').forEach(el => {
+        ['href', 'src'].forEach(attr => {
+          const v = el.getAttribute(attr);
+          if (!v) return;
+          if (/^(https?:|mailto:|tel:|#|\/\/|\/)/i.test(v)) return;
+          const stripped = v.replace(/^(\.\.\/)+/, '');
+          el.setAttribute(attr, doc.dir + stripped);
+        });
+      });
+      // Intercept links to other markdown docs in the nav
+      tmp.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        const matchIdx = DOCS.findIndex(d => href.endsWith(d.file.split('/').pop()));
+        if (matchIdx >= 0) {
+          a.addEventListener('click', e => { e.preventDefault(); loadDoc(matchIdx); });
+        }
+      });
+      // Force download for material files
+      tmp.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || /^(https?:|mailto:|tel:|#|\/\/)/i.test(href)) return;
+        if (/(?:^|\/)(scripts|materials|test-files|data)\//i.test(href) || /\.(zip|txt|csv|pdf|docx?|xlsx?|pptx?|json|xml|ps1|psd1|7z|tar|gz)$/i.test(href)) {
+          const filename = href.split('/').pop();
+          a.setAttribute('download', filename);
+        }
+      });
+      docPaper.innerHTML = tmp.innerHTML;
+      docPaper.scrollTop = 0;
+      document.querySelector('.output-panel').scrollTop = 0;
+      history.replaceState(null, '', '#' + encodeURIComponent(DOCS[i].file));
+    } catch (e) {
+      docPaper.innerHTML = `<div class="error"><strong>Couldn't load ${DOCS[i].file}.</strong><br>${e.message}<br><br>Tip: open this page through a web server (e.g. GitHub Pages or <code>python -m http.server</code>) — opening it directly from disk blocks fetching local files.</div>`;
+    }
+  }
+
+  // Deep link support (#../docs/00-overview.md)
+  const hash = decodeURIComponent(location.hash.slice(1));
+  const initialIdx = Math.max(0, DOCS.findIndex(d => d.file === hash));
+  loadDoc(initialIdx);
+</script>
+
+</body>
+</html>
