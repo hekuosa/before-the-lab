@@ -2,6 +2,8 @@
 
 The Microsoft 365 Developer Program **Instant Sandbox** is a fully pre-configured E5 developer environment that provisions in minutes, pre-loaded with 16 fictitious sample users, Microsoft Teams data packs, Microsoft Graph and Office Add-ins data, and pre-configured custom apps. The Instant Sandbox now also supports **add-on commerce**, so you can purchase additional services (including Microsoft Copilot) directly from within the sandbox.
 
+For more information, see the [Microsoft 365 Developer Program documentation](https://developer.microsoft.com/microsoft-365/dev-program).
+
 > **Important:** You will not be charged for the free E5 developer sandbox. Billing details are required only for account verification and to enable future add-on purchases.
 
 ## Prerequisites
@@ -92,19 +94,3 @@ From the dashboard you can:
 - Monitor the 90-day renewable subscription timer.
 
 > **Tip:** Visual Studio subscribers benefit from automatic renewal of their E5 subscription, as shown in the dashboard.
-
-## Troubleshooting
-
-- **Billing account not appearing in dropdown** — Select the **Refresh (↺)** icon next to the **Billing account** dropdown. Allow a few seconds after completing billing account creation before refreshing.
-- **Set up button remains greyed out** — Ensure all required fields (**Billing account**, **Billing profile**, and **Invoice section**) are selected. All three dropdowns must have a value before the **Set up** button becomes active.
-- **Provisioning takes longer than expected** — The Instant Sandbox typically provisions within minutes. If it takes longer, refresh the Developer Program dashboard. If the issue persists, contact Microsoft 365 Developer Program support.
-
-## Next steps
-
-With your Instant Sandbox active, you can:
-
-- Purchase add-on services such as Microsoft Copilot directly from within your sandbox.
-- Connect Visual Studio to link your subscription for automatic renewals.
-- Continue with [03 — Prepare the developer subscription](03-prepare-the-developer-subscription.md) to configure Edge profiles, M365 groups, audit, and sensitivity labelling.
-
-For more information, see the [Microsoft 365 Developer Program documentation](https://developer.microsoft.com/microsoft-365/dev-program).
