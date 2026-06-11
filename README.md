@@ -5,6 +5,8 @@ Pre-lab setup guide for the **Data Security Hack To Build** — getting a Micros
 **Browse online:** <https://hekuosa.github.io/before-the-lab/HTML/>
 **Browse GitHub repo:** <https://github.com/hekuosa/before-the-lab>
 
+> **Have feedback or ideas?** Use [this form](https://forms.office.com/r/EaddnVcWu5) to **report issues, suggest improvements, or propose new lab scenarios or questions** for this guide. Every bit of feedback helps!
+
 ## Contents
 
 The repo covers two pre-lab paths. Pick the one that matches how you will run the lab.
