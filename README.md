@@ -19,11 +19,11 @@ For partners running the lab on their own Visual Studio–activated E5 sandbox.
 | 02 | [Set up the developer subscription](docs/02-set-up-developer-subscription.md) | Provision the M365 E5 Instant Sandbox | 15–30 min |
 | 03 | [Prepare the developer subscription](docs/03-prepare-the-developer-subscription.md) | Edge profile, M365 groups, audit, container labels | 30 min |
 
-### Path B — CDX/MDX demo tenant
+### Path B — CDX demo tenant
 
 For partners running the lab on a Microsoft Customer Demo Experience tenant.
 
-- [Before the Lab — CDX/MDX tenant](CDX/MDX/before-the-lab.md) — create the CDX env, Edge profiles, HR group, enable audit, migrate to the modern label scheme.
+- [Before the Lab — CDX tenant](CDX%20Environment/before-the-lab.md) — create the CDX env, Edge profiles, HR group, enable audit, migrate to the modern label scheme.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ docs/                              # Path A — M365 Developer subscription
     ├── Config/
     └── Modules/
 
-CDX/MDX/                           # Path B — CDX demo tenant
+CDX Environment/                   # Path B — CDX demo tenant
 ├── before-the-lab.md
 └── images/
 

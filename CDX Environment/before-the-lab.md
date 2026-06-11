@@ -1,4 +1,4 @@
-# Before the Lab — CDX/MDX tenant
+# Before the Lab — CDX tenant
 
 Set up a Microsoft Customer Demo Experience (CDX) tenant for the Data Security Hack lab. By the end of this guide your tenant has the HR group, audit logging, and the modern sensitivity-label scheme in place.
 
