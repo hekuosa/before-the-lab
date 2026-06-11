@@ -38,6 +38,8 @@ From the **Country/region for your data center** dropdown, choose the region geo
 
 ### 2b. Select a billing account
 
+> **Note:** This is an automated fetch from Azure. If there are any valid billing accounts associated with the email address used to log in, will appear in the dropdown for the user to select.
+
 Select the **Billing account** dropdown. If you have an existing billing account associated with your Microsoft account, it will appear in the list — select it and skip to **Step 2d**.
 
 If the dropdown is empty or your account is not listed, create a new billing account (continue with **Step 2c**).
