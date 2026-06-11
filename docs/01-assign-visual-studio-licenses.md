@@ -67,7 +67,3 @@ Reference: [aka.ms/partnerbenefits](https://aka.ms/partnerbenefits)
 1. Partner Program admins in Partner Center assign Visual Studio Enterprise IDE licenses to users. After the licenses are assigned, users activate and sign in to the IDE by using their work email.
 
 2. The [Visual Studio subscriptions portal](https://my.visualstudio.com/) serves as the access portal for Visual Studio-related Partner Program benefits. The benefits are defined by Partner Program eligibility rather than Visual Studio subscription tiers.
-
-## Next
-
-Continue with [02 — Set up the developer subscription](02-set-up-developer-subscription.md).
