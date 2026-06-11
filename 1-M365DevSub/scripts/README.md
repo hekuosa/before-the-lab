@@ -17,7 +17,7 @@ Run from step [03 — Prepare the developer subscription](../03-prepare-the-deve
 ## Quick start
 
 ```powershell
-cd <repo-root>\A-Microsoft-365-Developer-Subscription\scripts
+cd <repo-root>\1-M365DevSub\scripts
 .\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com -AutoInstallModules -WhatIf
 ```
 

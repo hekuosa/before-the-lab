@@ -101,13 +101,13 @@
 
 <script>
   const DOCS = [
-    { group: 'Setup steps', num: '00', title: 'Overview',                          file: '../A-Microsoft-365-Developer-Subscription/docs/00-overview.md',                          dir: '../A-Microsoft-365-Developer-Subscription/docs/' },
-    { group: 'Setup steps', num: '01', title: 'Assign Visual Studio licenses',     file: '../A-Microsoft-365-Developer-Subscription/docs/01-assign-visual-studio-licenses.md',     dir: '../A-Microsoft-365-Developer-Subscription/docs/' },
-    { group: 'Setup steps', num: '02', title: 'Set up the developer subscription', file: '../A-Microsoft-365-Developer-Subscription/docs/02-set-up-developer-subscription.md',     dir: '../A-Microsoft-365-Developer-Subscription/docs/' },
-    { group: 'Setup steps', num: '03', title: 'Prepare the developer subscription',file: '../A-Microsoft-365-Developer-Subscription/docs/03-prepare-the-developer-subscription.md',dir: '../A-Microsoft-365-Developer-Subscription/docs/' },
-    { group: 'B-CDX-Environment', num: '01', title: 'Create a B-CDX-Environment',      file: '../B-CDX-Environment/docs/01-create-a-cdx-environment.md',     dir: '../B-CDX-Environment/docs/' },
-    { group: 'B-CDX-Environment', num: '02', title: 'Create Edge profiles',           file: '../B-CDX-Environment/docs/02-create-edge-profiles.md',         dir: '../B-CDX-Environment/docs/' },
-    { group: 'B-CDX-Environment', num: '03', title: 'Prepare the B-CDX-Environment',    file: '../B-CDX-Environment/docs/03-prepare-the-cdx-environment.md',  dir: '../B-CDX-Environment/docs/' }
+    { group: 'Setup steps', num: '00', title: 'Overview',                          file: '../1-M365DevSub/docs/00-overview.md',                          dir: '../1-M365DevSub/docs/' },
+    { group: 'Setup steps', num: '01', title: 'Assign Visual Studio licenses',     file: '../1-M365DevSub/docs/01-assign-visual-studio-licenses.md',     dir: '../1-M365DevSub/docs/' },
+    { group: 'Setup steps', num: '02', title: 'Set up the developer subscription', file: '../1-M365DevSub/docs/02-set-up-developer-subscription.md',     dir: '../1-M365DevSub/docs/' },
+    { group: 'Setup steps', num: '03', title: 'Prepare the developer subscription',file: '../1-M365DevSub/docs/03-prepare-the-developer-subscription.md',dir: '../1-M365DevSub/docs/' },
+    { group: '2-CDXEnv', num: '01', title: 'Create a 2-CDXEnv',      file: '../2-CDXEnv/docs/01-create-a-cdx-environment.md',     dir: '../2-CDXEnv/docs/' },
+    { group: '2-CDXEnv', num: '02', title: 'Create Edge profiles',           file: '../2-CDXEnv/docs/02-create-edge-profiles.md',         dir: '../2-CDXEnv/docs/' },
+    { group: '2-CDXEnv', num: '03', title: 'Prepare the 2-CDXEnv',    file: '../2-CDXEnv/docs/03-prepare-the-cdx-environment.md',  dir: '../2-CDXEnv/docs/' }
   ];
 
   const navList = document.getElementById('navList');
@@ -190,7 +190,7 @@
     }
   }
 
-  // Deep link support (#../A-Microsoft-365-Developer-Subscription/00-overview.md)
+  // Deep link support (#../1-M365DevSub/00-overview.md)
   const hash = decodeURIComponent(location.hash.slice(1));
   const initialIdx = Math.max(0, DOCS.findIndex(d => d.file === hash));
   loadDoc(initialIdx);
