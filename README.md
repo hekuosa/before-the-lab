@@ -1,62 +1,34 @@
 # Before the Lab
 
-Pre-lab setup guide for the **Data Security Hack To Build**.
+Pre-lab setup guide for the **Data Security Hack To Build** — getting a Microsoft 365 tenant ready for the lab exercises.
 
-## Reading order
+Browse online: <https://hekuosa.github.io/before-the-lab/HTML/>
 
-The repo covers two pre-lab paths. Pick the one that matches how you will run the lab:
+## Contents
 
-- **Path A — Microsoft 365 Developer Subscription** (preferred)
-- **Path B — CDX demo tenant**
+The repo covers two pre-lab paths. Pick the one that matches how you will run the lab.
 
-### Path A — Microsoft 365 Developer Subscription
+### Path A — Microsoft 365 Developer Subscription *(preferred)*
 
 For partners running the lab on their own Visual Studio–activated E5 sandbox.
 
-| # | Doc | What you'll do | Time |
-|---|-----|----------------|------|
-| 00 | [Overview](1-M365DevSub/docs/00-overview.md) | Understand the end state and prerequisites | 5 min |
-| 01 | [Assign Visual Studio licenses](1-M365DevSub/docs/01-assign-visual-studio-licenses.md) | Activate VS Enterprise benefit in Partner Center | 10 min |
-| 02 | [Set up the developer subscription](1-M365DevSub/docs/02-set-up-developer-subscription.md) | Provision the M365 E5 Instant Sandbox | 15–30 min |
-| 03 | [Prepare the developer subscription](1-M365DevSub/docs/03-prepare-the-developer-subscription.md) | Edge profile, M365 groups, audit, container labels | 30 min |
+- [00 – Overview](1-M365DevSub/docs/00-overview.md)
+- [01 – Assign Visual Studio licenses](1-M365DevSub/docs/01-assign-visual-studio-licenses.md)
+- [02 – Set up the developer subscription](1-M365DevSub/docs/02-set-up-developer-subscription.md)
+- [03 – Prepare the developer subscription](1-M365DevSub/docs/03-prepare-the-developer-subscription.md)
 
 ### Path B — CDX demo tenant
 
 For partners running the lab on a Microsoft Customer Demo Experience tenant.
 
-| # | Doc | What you'll do |
-|---|-----|----------------|
-| 01 | [Create a CDX environment](2-CDXEnv/docs/01-create-a-cdx-environment.md) | Provision the Microsoft Purview Data Security demo tenant |
-| 02 | [Create Edge profiles](2-CDXEnv/docs/02-create-edge-profiles.md) | Set up dedicated Edge profiles for admin and lab users |
-| 03 | [Prepare the CDX environment](2-CDXEnv/docs/03-prepare-the-cdx-environment.md) | HR group, enable audit, modern label scheme |
+- [01 – Create a CDX environment](2-CDXEnv/docs/01-create-a-cdx-environment.md)
+- [02 – Create Edge profiles](2-CDXEnv/docs/02-create-edge-profiles.md)
+- [03 – Prepare the CDX environment](2-CDXEnv/docs/03-prepare-the-cdx-environment.md)
 
-## Repository layout
+## Tenant-baseline scripts
 
-```
-1-M365DevSub/    # Path A — M365 Developer subscription
-├── docs/
-│   ├── 00-overview.md
-│   ├── 01-assign-visual-studio-licenses.md
-│   ├── 02-set-up-developer-subscription.md
-│   └── 03-prepare-the-developer-subscription.md
-├── images/
-└── scripts/                               # PowerShell tenant-baseline toolkit
-    ├── README.md
-    ├── Deploy-TenantBaseline.ps1
-    ├── Config/
-    └── Modules/
+PowerShell toolkit that applies the Path A tenant settings (audit, sensitivity-label support, container labels) idempotently. See [`1-M365DevSub/scripts/`](1-M365DevSub/scripts/).
 
-2-CDXEnv/                         # Path B — CDX demo tenant
-├── docs/
-│   ├── 01-create-a-cdx-environment.md
-│   ├── 02-create-edge-profiles.md
-│   └── 03-prepare-the-cdx-environment.md
-└── images/
+## Source
 
-HTML/                                      # Static viewer for the markdown docs
-└── index.html
-```
-
-## License
-
-[MIT](LICENSE)
+Companion to the main lab guide: [hekuosa/DSH-lab-guide](https://github.com/hekuosa/DSH-lab-guide).
