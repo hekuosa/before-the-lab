@@ -128,7 +128,7 @@ You will see four browser sign-in prompts (EXO, IPPS, SPO, Graph). Choose **No, 
 
 ![Microsoft sign-in prompt with "No, this app only" highlighted](../images/before-the-lab-developer-subscription-013.png)
 
-```
+
 You will be asked to confirm `Proceed with deployment? [y/N]`. The script then:
 
 1. Enables Unified Audit Log ingestion (idempotent — skipped if already on).
