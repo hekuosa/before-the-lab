@@ -17,7 +17,7 @@ Set up a Microsoft Customer Demo Experience (CDX) tenant for the Data Security H
 
 2. Create a **Microsoft Purview Data Security Demo Tenant — 90d**.
 
-   ![Microsoft Purview Data Security Demo Tenant — 90d tile in CDX](images/cdx-mdx-001.png)
+   ![Microsoft Purview Data Security Demo Tenant — 90d tile in CDX](../images/cdx-mdx-001.png)
 
 > **Note:** If you get a *"Not authorized"* error while creating the CDX environment, see [Troubleshooting](#troubleshooting) at the bottom of this page.
 
@@ -35,17 +35,17 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
 
 1. In Microsoft Edge, select your profile icon, then select **Add profile**.
 
-   ![Set up new work profile in Edge](images/cdx-mdx-002.png)
+   ![Set up new work profile in Edge](../images/cdx-mdx-002.png)
 
 2. Select **Add an account**, then select **Sign in to sync data**. Sign in with the credentials provided in the lab email and complete the initial MFA setup.
 
-   ![Add a new account in Edge](images/cdx-mdx-003.png)
+   ![Add a new account in Edge](../images/cdx-mdx-003.png)
 
 3. When prompted **"Stay signed in to all your apps"**, select **No, sign in to this app only** to avoid registering your device in the tenant.
 
-   ![No, sign in to this app only — avoid registering your device in the tenant](images/cdx-mdx-004.png)
+   ![No, sign in to this app only — avoid registering your device in the tenant](../images/cdx-mdx-004.png)
 
-   ![Edge profile preferences settings](images/cdx-mdx-005.png)
+   ![Edge profile preferences settings](../images/cdx-mdx-005.png)
 
 > **Tip:** Repeat for each user (admin, Nestor, Irvin) so you can switch tenants quickly during the lab.
 
@@ -73,7 +73,7 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
 
 8. Review the settings, then select **Create group**.
 
-   ![New Microsoft 365 group settings — HR, Private, Teams enabled](images/cdx-mdx-006.png)
+   ![New Microsoft 365 group settings — HR, Private, Teams enabled](../images/cdx-mdx-006.png)
 
 ## Enable Audit
 
@@ -83,7 +83,7 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
 
 3. On the **Search** page, select the **Start recording user and admin activity** bar to enable audit logging. Once enabled, the blue bar disappears from the page.
 
-   ![Enable Audit — Start recording user and admin activity banner](images/cdx-mdx-007.png)
+   ![Enable Audit — Start recording user and admin activity banner](../images/cdx-mdx-007.png)
 
 > **Note:** The banner may take a few hours to disappear. You don't need to wait in the portal for it to go away.
 
@@ -95,9 +95,9 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
 
    > **Note:** The banner may appear simply as a **Migrate** button.
 
-   ![Information banner on the Sensitivity labels page to migrate to the modern label scheme](images/cdx-mdx-008.png)
+   ![Information banner on the Sensitivity labels page to migrate to the modern label scheme](../images/cdx-mdx-008.png)
 
-   ![Modern label scheme migration confirmation](images/cdx-mdx-010.png)
+   ![Modern label scheme migration confirmation](../images/cdx-mdx-010.png)
 
 ## Enable sensitivity labels for Office files in SharePoint and OneDrive
 
@@ -107,7 +107,7 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
 
    > *"Your organization has not turned on the ability to process content in Office online files that have encrypted sensitivity labels applied and are stored in OneDrive and SharePoint. You can turn on here, but note that additional configuration is required for Multi-Geo environments."*
 
-   ![Turn on sensitivity labels for Office files in SharePoint and OneDrive](images/cdx-mdx-011.png)
+   ![Turn on sensitivity labels for Office files in SharePoint and OneDrive](../images/cdx-mdx-011.png)
 
 > **Note:** If you don't see this banner, the feature is likely already enabled.
 
@@ -115,7 +115,7 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
 
 ### "Not authorized" error when creating the CDX environment
 
-![Not authorized error in CDX](images/cdx-mdx-012.png)
+![Not authorized error in CDX](../images/cdx-mdx-012.png)
 
 Follow these steps:
 

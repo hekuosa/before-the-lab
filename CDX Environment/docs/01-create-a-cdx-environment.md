@@ -3,13 +3,13 @@
 1. Go to [Microsoft Demo eXperiences](https://cdx.transform.microsoft.com/).
 2. Create a **Microsoft Purview Data Security Demo Tenant — 90d**.
 
-   ![Microsoft Purview Data Security Demo Tenant — 90d tile in CDX](images/cdx-mdx-001.png)
+   ![Microsoft Purview Data Security Demo Tenant — 90d tile in CDX](../images/cdx-mdx-001.png)
 
 # Troubleshooting
 
 ## If you get a "Not authorized" error when creating the CDX environment as in the screenshot below:
 
-![Not authorized error in CDX](images/cdx-mdx-012.png)
+![Not authorized error in CDX](../images/cdx-mdx-012.png)
 
 Follow these steps:
 

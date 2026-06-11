@@ -15,7 +15,7 @@
    - Keep **Add Microsoft Teams to your group** selected.
 8. Review the settings, then select **Create group**.
 
-   ![New Microsoft 365 group settings — HR, Private, Teams enabled](images/cdx-mdx-006.png)
+   ![New Microsoft 365 group settings — HR, Private, Teams enabled](../images/cdx-mdx-006.png)
 
 
 # Enable Audit
@@ -24,7 +24,7 @@
 2. Select **Solutions** in the left sidebar, then select **Audit**.
 3. On the **Search** page, select the **Start recording user and admin activity** bar to enable audit logging. Once enabled, the blue bar disappears from the page.
 
-   ![Enable Audit — Start recording user and admin activity banner](images/cdx-mdx-007.png)
+   ![Enable Audit — Start recording user and admin activity banner](../images/cdx-mdx-007.png)
 
 > **Note:** The banner may take a few hours to disappear. You don't need to wait in the portal for it to go away.
 
@@ -36,9 +36,9 @@
 
    > **Note:** The banner may appear simply as a **Migrate** button.
 
-   ![Information banner on the Sensitivity labels page to migrate to the modern label scheme](images/cdx-mdx-008.png)
+   ![Information banner on the Sensitivity labels page to migrate to the modern label scheme](../images/cdx-mdx-008.png)
 
-   ![Modern label scheme migration confirmation](images/cdx-mdx-010.png)
+   ![Modern label scheme migration confirmation](../images/cdx-mdx-010.png)
 
 
 # Activate the default label scheme
@@ -54,6 +54,6 @@
 
    > *"Your organization has not turned on the ability to process content in Office online files that have encrypted sensitivity labels applied and are stored in OneDrive and SharePoint. You can turn on here, but note that additional configuration is required for Multi-Geo environments."*
 
-   ![Turn on sensitivity labels for Office files in SharePoint and OneDrive](images/cdx-mdx-011.png)
+   ![Turn on sensitivity labels for Office files in SharePoint and OneDrive](../images/cdx-mdx-011.png)
 
 > **Note:** If you don't see this banner, the feature is already enabled.

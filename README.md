@@ -23,7 +23,7 @@ For partners running the lab on their own Visual Studio–activated E5 sandbox.
 
 For partners running the lab on a Microsoft Customer Demo Experience tenant.
 
-- [Before the Lab — CDX tenant](CDX%20Environment/before-the-lab.md) — create the CDX env, Edge profiles, HR group, enable audit, migrate to the modern label scheme.
+- [Before the Lab — CDX tenant](CDX%20Environment/docs/before-the-lab.md) — create the CDX env, Edge profiles, HR group, enable audit, migrate to the modern label scheme.
 
 ## Prerequisites
 

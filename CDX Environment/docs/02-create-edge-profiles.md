@@ -12,17 +12,17 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
 
 1. In Microsoft Edge, select your profile icon, then select **Add profile**.
 
-   ![Set up new work profile in Edge](images/cdx-mdx-002.png)
+   ![Set up new work profile in Edge](../images/cdx-mdx-002.png)
 
 2. Select **Add an account**, then select **Sign in to sync data**. Sign in with the credentials provided in the lab email and complete the initial MFA setup.
 
-   ![Add a new account in Edge](images/cdx-mdx-003.png)
+   ![Add a new account in Edge](../images/cdx-mdx-003.png)
 
 3. When prompted **"Stay signed in to all your apps"**, select **No, sign in to this app only** to avoid registering your device in the tenant.
 
-   ![No, sign in to this app only — avoid registering your device in the tenant](images/cdx-mdx-004.png)
+   ![No, sign in to this app only — avoid registering your device in the tenant](../images/cdx-mdx-004.png)
 
-   ![Edge profile preferences settings](images/cdx-mdx-005.png)
+   ![Edge profile preferences settings](../images/cdx-mdx-005.png)
 
 > **Tip:** Repeat for each user (admin, Nestor, Irvin) so you can switch tenants quickly during the lab.
 
@@ -43,4 +43,4 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
    - Keep **Add Microsoft Teams to your group** selected.
 8. Review the settings, then select **Create group**.
 
-   ![New Microsoft 365 group settings — HR, Private, Teams enabled](images/cdx-mdx-006.png)
+   ![New Microsoft 365 group settings — HR, Private, Teams enabled](../images/cdx-mdx-006.png)
