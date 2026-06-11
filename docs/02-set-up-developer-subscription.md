@@ -94,3 +94,9 @@ From the dashboard you can:
 - Monitor the 90-day renewable subscription timer.
 
 > **Tip:** Visual Studio subscribers benefit from automatic renewal of their E5 subscription, as shown in the dashboard.
+
+# Troubleshooting
+
+- **Billing account not appearing in dropdown** — Select the **Refresh (↺)** icon next to the **Billing account** dropdown. Allow a few seconds after completing billing account creation before refreshing.
+- **Set up button remains greyed out** — Ensure all required fields (**Billing account**, **Billing profile**, and **Invoice section**) are selected. All three dropdowns must have a value before the **Set up** button becomes active.
+- **Provisioning takes longer than expected** — The Instant Sandbox typically provisions within minutes. If it takes longer, refresh the Developer Program dashboard. If the issue persists, contact Microsoft 365 Developer Program support.
