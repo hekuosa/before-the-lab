@@ -1,26 +1,30 @@
+# Prepare the developer subscription
+
+With your sandbox provisioned, configure a clean Edge profile, set up the lab's Microsoft 365 groups, and apply the tenant baseline (audit logging, sensitivity-label support, container labels).
+
 ## Create a new Edge profile
 
 Use a dedicated Edge profile for this lab to avoid conflicts with InPrivate browsing and cached sign-in state from your real account.
 
 1. In Microsoft Edge, select your profile icon (top-right corner), then select **Set up a new profile** > **Work or school**.
 
-   ![Microsoft Edge "Set up a new profile" dialog with the Work or school option](images/before-the-lab-developer-subscription-007-d64d55d3.png)
+   ![Microsoft Edge "Set up a new profile" dialog with the Work or school option](images/before-the-lab-developer-subscription-007.png)
 
 2. Select **Choose an account** > **Add new account**, then select **Sign in to sync data**. Sign in with the credentials you just created and complete the initial MFA setup.
 
-   ![Edge sign-in screen for syncing the new work account](images/before-the-lab-developer-subscription-008-bef19d77.png)
+   ![Edge sign-in screen for syncing the new work account](images/before-the-lab-developer-subscription-008.png)
 
 3. When prompted "Stay signed in to all your apps", select **No, sign in to this app only** to avoid registering your device in the tenant.
 
-   ![Stay signed in prompt with "No, sign in to this app only" selected](images/before-the-lab-developer-subscription-009-14766db5.png)
+   ![Stay signed in prompt with "No, sign in to this app only" selected](images/before-the-lab-developer-subscription-009.png)
 
 4. In Edge profile settings, go to **Profile preferences** and turn on **Automatically sign in to sites with your current work or school account**.
 
-   ![Edge profile preferences with the auto-sign-in toggle enabled](images/before-the-lab-developer-subscription-010-6c9eae08.png)
+   ![Edge profile preferences with the auto-sign-in toggle enabled](images/before-the-lab-developer-subscription-010.png)
 
     > **Note:** Come back to this guide when you need more user profiles for your demo users.
 
-## M365 Groups Setup
+## Set up Microsoft 365 groups
 
 ### Create a Microsoft 365 group "HR"
 
@@ -38,20 +42,23 @@ Use a dedicated Edge profile for this lab to avoid conflicts with InPrivate brow
    - **Privacy:** Private
    - Keep **Add Microsoft Teams to your group** selected.
 
-   ![New Microsoft 365 group settings with HR email, Private, and Teams enabled](images/before-the-lab-developer-subscription-011-0ddf895a.png)
+   ![New Microsoft 365 group settings with HR email, Private, and Teams enabled](images/before-the-lab-developer-subscription-011.png)
 
 8. Review the settings, then select **Create group**.
 
-### Edit M365 Group U.S. Sales
+### Edit the U.S. Sales group
 
-1. Go to admin.microsoft.com and sign in with your Admin user.
-2. In the left navigation, select Teams & groups > Active teams & groups.
-3. Choose U.S. Sales, click on Membership and Members and select Nestor Wilke and “Remove as member”. Confirm Remove
+Remove **Nestor Wilke** from the existing **U.S. Sales** group so that later DLP and sensitivity-label exercises behave as expected.
+
+1. Go to [admin.microsoft.com](https://admin.microsoft.com) and sign in with your admin user.
+2. In the left navigation, select **Teams & groups** > **Active teams & groups**.
+3. Select **U.S. Sales**, open the **Membership** tab, and select **Members**.
+4. Select **Nestor Wilke**, choose **Remove as member**, and confirm **Remove**.
 
 
-## Enable Audit & Sensitivity Labeling for Containers
+## Enable audit and sensitivity labelling for containers
 
-The PowerShell toolkit in [`scripts/`](scripts/) configures every foundational Purview tenant setting in a single, idempotent run:
+With the M365 groups in place, switch to PowerShell (or the equivalent admin portals) to apply tenant-wide settings. The toolkit in [`scripts/`](scripts/) configures every foundational Purview tenant setting in a single, idempotent run:
 
 - Unified Audit Log ingestion (Exchange Online)
 - SharePoint sensitivity-label support (`EnableAIPIntegration`)
@@ -72,7 +79,7 @@ References:
 
    > **Note:** Initial activation can take up to 24 hours before audit data is fully available.
 
-   ![Audit logging enabled banner in Microsoft Purview](images/before-the-lab-developer-subscription-012-00997e1c.png)
+   ![Audit logging enabled banner in Microsoft Purview](images/before-the-lab-developer-subscription-012.png)
 
 2. **Enable SharePoint sensitivity-label support.** Connect to SharePoint Online PowerShell and run:
 
@@ -113,20 +120,20 @@ References:
 Open a **fresh `pwsh` window** and preview the changes without touching the tenant:
 
 ```powershell
-cd <repo-root>\scripts
+cd <repo-root>\docs\scripts
 .\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules  -WhatIf
 ```
 
 You will see four browser sign-in prompts (EXO, IPPS, SPO, Graph). Choose **No, this app only** when prompted "Stay signed in to all your apps".
 
-![Microsoft sign-in prompt with "No, this app only" highlighted](images/before-the-lab-developer-subscription-013-1f2345a1.png)
+![Microsoft sign-in prompt with "No, this app only" highlighted](images/before-the-lab-developer-subscription-013.png)
 
 #### Apply the changes
 
 Re-run the same command without `-WhatIf`:
 
 ```powershell
-cd <repo-root>\scripts
+cd <repo-root>\docs\scripts
 .\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules
 ```
 You will be asked to confirm `Proceed with deployment? [y/N]`. The script then:
