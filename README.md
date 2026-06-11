@@ -23,7 +23,11 @@ For partners running the lab on their own Visual Studio–activated E5 sandbox.
 
 For partners running the lab on a Microsoft Customer Demo Experience tenant.
 
-- [Before the Lab — CDX tenant](CDX%20Environment/docs/before-the-lab.md) — create the CDX env, Edge profiles, HR group, enable audit, migrate to the modern label scheme.
+| # | Doc | What you'll do |
+|---|-----|----------------|
+| 01 | [Create a CDX environment](CDX%20Environment/docs/01-create-a-cdx-environment.md) | Provision the Microsoft Purview Data Security demo tenant |
+| 02 | [Create Edge profiles](CDX%20Environment/docs/02-create-edge-profiles.md) | Set up dedicated Edge profiles for admin and lab users |
+| 03 | [Prepare the CDX environment](CDX%20Environment/docs/03-prepare-the-cdx-environment.md) | HR group, enable audit, modern label scheme |
 
 ## Prerequisites
 
