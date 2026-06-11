@@ -165,12 +165,14 @@
         });
       });
       // Intercept links to other markdown docs in the nav
+      // Mark them with a class — actual click handler is delegated on docPaper below
+      // so listeners survive innerHTML assignment.
       tmp.querySelectorAll('a[href]').forEach(a => {
         const href = a.getAttribute('href');
         if (!href) return;
         const matchIdx = DOCS.findIndex(d => href.endsWith(d.file.split('/').pop()));
         if (matchIdx >= 0) {
-          a.addEventListener('click', e => { e.preventDefault(); loadDoc(matchIdx); });
+          a.dataset.docIdx = matchIdx;
         }
       });
       // Force download for material files
@@ -195,6 +197,15 @@
   const hash = decodeURIComponent(location.hash.slice(1));
   const initialIdx = Math.max(0, DOCS.findIndex(d => d.file === hash));
   loadDoc(initialIdx);
+
+  // Delegated handler: clicking a link in the rendered doc that points to another
+  // doc in DOCS loads it in the viewer instead of navigating away.
+  docPaper.addEventListener('click', e => {
+    const a = e.target.closest('a[data-doc-idx]');
+    if (!a) return;
+    e.preventDefault();
+    loadDoc(Number(a.dataset.docIdx));
+  });
 </script>
 
 </body>
