@@ -18,7 +18,7 @@ For more information, see the [Microsoft 365 Developer Program documentation](ht
 
 2. In the setup dialog, select **Instant sandbox (Add-on purchases enabled)** — this is the top option and should already be selected by default.
 
-   ![Choose sandbox type dialog with the Instant sandbox (Add-on purchases enabled) option selected](images/before-the-lab-developer-subscription-014.png)
+   ![Choose sandbox type dialog with the Instant sandbox (Add-on purchases enabled) option selected](../images/before-the-lab-developer-subscription-014.png)
 
    > **Note:** Your domain name will be pre-configured (e.g., `yourtenant.onmicrosoft.com`) and **cannot be customised** after sign-up. The preview panel on the right shows the 90-day renewable subscription details.
 
@@ -28,7 +28,7 @@ For more information, see the [Microsoft 365 Developer Program documentation](ht
 
 On the **Set up your Microsoft 365 E5 instant sandbox** screen, you provide your data centre region and link a billing account.
 
-![Billing account configuration screen](images/before-the-lab-developer-subscription-015.png)
+![Billing account configuration screen](../images/before-the-lab-developer-subscription-015.png)
 
 ### 2a. Select country/region
 
@@ -49,7 +49,7 @@ If the dropdown is empty or your account is not listed, create a new billing acc
 
 1. Select **Add a new billing account** below the dropdown. This opens the *Microsoft for your business* billing account creation flow in a new window.
 
-   ![Create a new billing account wizard](images/before-the-lab-developer-subscription-016.png)
+   ![Create a new billing account wizard](../images/before-the-lab-developer-subscription-016.png)
 
 2. Complete all required fields across the three-step wizard:
 
@@ -73,7 +73,7 @@ If the dropdown is empty or your account is not listed, create a new billing acc
 
 After the billing configuration is saved, you are prompted to set login credentials for your developer sandbox.
 
-![Set up admin credentials dialog](images/before-the-lab-developer-subscription-017.png)
+![Set up admin credentials dialog](../images/before-the-lab-developer-subscription-017.png)
 
 1. Fill in the following fields:
    - **Admin username** — Choose a username for your sandbox administrator account.
@@ -87,7 +87,7 @@ After the billing configuration is saved, you are prompted to set login credenti
 
 Once provisioning is complete, you are redirected to the Microsoft 365 Developer Program dashboard. Your new sandbox subscription is displayed with an **Active** status.
 
-![Developer Program dashboard showing the active sandbox](images/before-the-lab-developer-subscription-018.png)
+![Developer Program dashboard showing the active sandbox](../images/before-the-lab-developer-subscription-018.png)
 
 From the dashboard you can:
 

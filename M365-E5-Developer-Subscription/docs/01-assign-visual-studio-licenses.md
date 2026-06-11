@@ -50,7 +50,7 @@ Reference: [aka.ms/partnerbenefits](https://aka.ms/partnerbenefits)
 
 2. On the **Developer Tools** tab, select **Visual Studio subscriptions benefits**.
 
-   ![Screenshot that shows the Developer tools page in Partner Center.](images/before-the-lab-vs-licenses-001.png)
+   ![Screenshot that shows the Developer tools page in Partner Center.](../images/before-the-lab-vs-licenses-001.png)
 
 3. To assign a user the Visual Studio benefit, select the Visual Studio benefit that you want to activate. On the wizard pane, on the **Activate benefits** tab, select a user to which you want to assign the subscription, and then select **Assign user**. If the user you want to assign isn't in the list, you can [add new users](https://learn.microsoft.com/en-us/partner-center/account-settings/create-user-accounts-and-set-permissions) in **Account settings**.
 
