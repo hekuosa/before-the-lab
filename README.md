@@ -25,9 +25,9 @@ For partners running the lab on a Microsoft Customer Demo Experience tenant.
 
 | # | Doc | What you'll do |
 |---|-----|----------------|
-| 01 | [Create a CDX-Environment](CDX-Environment/docs/01-create-a-cdx-environment.md) | Provision the Microsoft Purview Data Security demo tenant |
+| 01 | [Create a CDX environment](CDX-Environment/docs/01-create-a-cdx-environment.md) | Provision the Microsoft Purview Data Security demo tenant |
 | 02 | [Create Edge profiles](CDX-Environment/docs/02-create-edge-profiles.md) | Set up dedicated Edge profiles for admin and lab users |
-| 03 | [Prepare the CDX-Environment](CDX-Environment/docs/03-prepare-the-cdx-environment.md) | HR group, enable audit, modern label scheme |
+| 03 | [Prepare the CDX environment](CDX-Environment/docs/03-prepare-the-cdx-environment.md) | HR group, enable audit, modern label scheme |
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ For partners running the lab on a Microsoft Customer Demo Experience tenant.
 ## Repository layout
 
 ```
-M365-E5-Developer-Subscription/                              # Path A — M365 Developer subscription
+M365-E5-Developer-Subscription/    # Path A — M365 Developer subscription
 ├── 00-overview.md
 ├── 01-assign-visual-studio-licenses.md
 ├── 02-set-up-developer-subscription.md
@@ -52,7 +52,10 @@ M365-E5-Developer-Subscription/                              # Path A — M365 D
     └── Modules/
 
 CDX-Environment/                   # Path B — CDX demo tenant
-├── before-the-lab.md
+├── docs/
+│   ├── 01-create-a-cdx-environment.md
+│   ├── 02-create-edge-profiles.md
+│   └── 03-prepare-the-cdx-environment.md
 └── images/
 
 HTML/                              # Static viewer for the markdown docs

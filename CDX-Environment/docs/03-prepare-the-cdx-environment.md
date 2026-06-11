@@ -1,4 +1,8 @@
-# Create the HR Microsoft 365 group
+# Prepare the CDX environment
+
+With the CDX tenant provisioned and Edge profiles in place, complete the remaining tenant settings: create the HR group, enable audit logging, and turn on sensitivity labelling for containers and Office files.
+
+## Create the HR Microsoft 365 group
 
 1. Go to [admin.microsoft.com](https://admin.microsoft.com) and sign in as the **MOD Administrator**.
 2. In the left navigation, select **Teams & groups** > **Active teams & groups**.
@@ -17,8 +21,7 @@
 
    ![New Microsoft 365 group settings — HR, Private, Teams enabled](../images/cdx-mdx-006-new.png)
 
-
-# Enable Audit
+## Enable Audit
 
 1. In **Microsoft Edge**, navigate to [https://purview.microsoft.com](https://purview.microsoft.com/) and sign in as **MOD Administrator**.
 2. Select **Solutions** in the left sidebar, then select **Audit**.
@@ -28,8 +31,7 @@
 
 > **Note:** The banner may take a few hours to disappear. You don't need to wait in the portal for it to go away.
 
-
-# Migrate to the modern label scheme
+## Migrate to the modern label scheme
 
 1. In Microsoft Purview, go to **Solutions** > **Information Protection** > **Sensitivity labels**.
 2. On the **Sensitivity labels** page, if you see the information banner **Migrate to the modern label scheme**, label migration is available to your tenant. From the banner, select **Get started** to begin the migration.
@@ -40,14 +42,13 @@
 
    ![Modern label scheme migration confirmation](../images/cdx-mdx-010.png)
 
+## Activate the default label scheme
 
-# Activate the default label scheme
-
-1. Navigate to Data Security Posture Management > Actions > Setup tasks.
-2. Select "Protect your data with sensitivity labels" to activate the default label scheme.
+1. Navigate to **Data Security Posture Management** > **Actions** > **Setup tasks**.
+2. Select **Protect your data with sensitivity labels** to activate the default label scheme.
 3. Allow up to 24 hours for the labels to appear across all apps and services.
 
-# Enable sensitivity labels for Office files in SharePoint and OneDrive
+## Enable sensitivity labels for Office files in SharePoint and OneDrive
 
 1. Go to [purview.microsoft.com](https://purview.microsoft.com/) > **Solutions** > **Information Protection**.
 2. Under **Sensitivity labels**, if you see this message, select **Turn on now**:

@@ -25,22 +25,3 @@ Use a dedicated Edge profile per user to avoid conflicts with InPrivate browsing
    ![Edge profile preferences settings](../images/cdx-mdx-005.png)
 
 > **Tip:** Repeat for each user (admin, Nestor, Irvin) so you can switch tenants quickly during the lab.
-
-## Create the HR Microsoft 365 group
-
-1. Go to [admin.microsoft.com](https://admin.microsoft.com) and sign in as the **MOD Administrator**.
-2. In the left navigation, select **Teams & groups** > **Active teams & groups**.
-3. Select **+ Add a Microsoft 365 group**.
-4. On **Name and description**, enter the following details, then select **Next**:
-   - **Name:** `HR`
-   - **Description:** This is the private HR group for HR-sensitive communication.
-5. Select **+ Assign owners**, search for **MOD Administrator**, then select **Add**.
-6. Add **MOD Administrator** as a member. *(Optional: also add **Diego Siciliani** as a member.)*
-7. On **Settings**, configure:
-   - **Group email address:** `HR`
-   - **Sensitivity:** None *(the label hasn't been published yet)*
-   - **Privacy:** Private
-   - Keep **Add Microsoft Teams to your group** selected.
-8. Review the settings, then select **Create group**.
-
-   ![New Microsoft 365 group settings — HR, Private, Teams enabled](../images/cdx-mdx-006.png)
