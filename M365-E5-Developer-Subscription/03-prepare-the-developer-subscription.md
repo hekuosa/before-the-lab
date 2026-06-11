@@ -42,7 +42,7 @@ Use a dedicated Edge profile for this lab to avoid conflicts with InPrivate brow
    - **Privacy:** Private
    - Keep **Add Microsoft Teams to your group** selected.
 
-   ![New Microsoft 365 group settings with HR email, Private, and Teams enabled](images/before-the-lab-developer-subscription-011.png)
+   ![New Microsoft 365 group settings with HR email, Private, and Teams enabled](images/before-the-lab-developer-subscription-011-new.png)
 
 8. Review the settings, then select **Create group**.
 
