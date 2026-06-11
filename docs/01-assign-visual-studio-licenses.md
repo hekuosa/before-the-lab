@@ -44,6 +44,8 @@ Reference: [aka.ms/partnerbenefits](https://aka.ms/partnerbenefits)
 
 ### Activate Microsoft AI Cloud Partner Program Visual Studio benefits
 
+> **Partner Center role**: You must have the **Microsoft AI Cloud Partner Program partner admin role in Partner Center.**
+
 1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard/home) and select **Benefits**.
 
 2. On the **Developer Tools** tab, select **Visual Studio subscriptions benefits**.
