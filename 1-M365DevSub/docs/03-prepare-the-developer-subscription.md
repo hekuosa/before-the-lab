@@ -111,30 +111,23 @@ References:
    ```powershell
    winget install --id Microsoft.PowerShell --source winget
    ```
-- A **tenant admin account** (Global Administrator, or a combination of Compliance Administrator + SharePoint Administrator + Groups Administrator). Use the tenant that was created earlier ( `admin@<yourtenant>.onmicrosoft.com`).
+- A **tenant admin account**  Use the tenant admin account that was created earlier ( `admin@<yourtenant>.onmicrosoft.com`).
 
-- Clone this repo or download scripts folder
-  
-#### Run a dry-run first (recommended)
 
-Open a **fresh `pwsh` window** and preview the changes without touching the tenant:
+#### Run the PowerShell script
+- Clone this repo locally or download scripts folder [1-M365DevSub/scripts](https://github.com/hekuosa/before-the-lab/tree/main/1-M365DevSub/scripts)
+- Open a **fresh `PowerShell 7+` window**, and run as an Admin. 
 
 ```powershell
 cd <repo-root>\1-M365DevSub\scripts
-.\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules  -WhatIf
+.\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules
 ```
+> Tip: Want to test first? Use -WhatIf to see what the script would do without making any changes.
 
 You will see four browser sign-in prompts (EXO, IPPS, SPO, Graph). Choose **No, this app only** when prompted "Stay signed in to all your apps".
 
 ![Microsoft sign-in prompt with "No, this app only" highlighted](../images/before-the-lab-developer-subscription-013.png)
 
-#### Apply the changes
-
-Re-run the same command without `-WhatIf`:
-
-```powershell
-cd <repo-root>\1-M365DevSub\scripts
-.\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules
 ```
 You will be asked to confirm `Proceed with deployment? [y/N]`. The script then:
 
