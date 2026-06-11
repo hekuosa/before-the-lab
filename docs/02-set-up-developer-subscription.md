@@ -38,7 +38,10 @@ From the **Country/region for your data center** dropdown, choose the region geo
 
 ### 2b. Select a billing account
 
-Select the **Billing account** dropdown. If you have an existing billing account associated with your Microsoft account (This is an automated fetch from Azure), it will appear in the list — select it and skip to **Step 2d**.
+Select the **Billing account** dropdown. If you have an existing billing account associated with your Microsoft account (This is an automated fetch from Azure), it will appear in the list.
+User has to be assigned at least a Contributor role to the account. For more information please visit [Manage access to billing information for Azure](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/manage-billing-access#give-others-access-to-view-billing-information)
+
+— select billing account and move to **Step 2d**.
 
 If the dropdown is empty or your account is not listed, create a new billing account (continue with **Step 2c**).
 
