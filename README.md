@@ -5,8 +5,8 @@ Pre-lab setup guide for the **Data Security Hack To Build**.
 ## Reading order
 
 The repo covers two pre-lab paths. Pick the one that matches how you will run the lab:
-**Path A — Microsoft 365 Developer Subscription** (preferred)
-**Path B — CDX demo tenant***
+- **Path A — Microsoft 365 Developer Subscription** (preferred)
+- **Path B — CDX demo tenant***
 
 ### Path A — Microsoft 365 Developer Subscription
 
