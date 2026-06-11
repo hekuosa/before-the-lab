@@ -6,12 +6,24 @@ Companion to the parent guide: [hekuosa/Data-Security-Hack](https://github.com/h
 
 ## Reading order
 
+The repo covers two pre-lab paths. Pick the one that matches how you will run the lab:
+
+### Path A — Microsoft 365 Developer Subscription
+
+For partners running the lab on their own Visual Studio–activated E5 sandbox.
+
 | # | Doc | What you'll do | Time |
 |---|-----|----------------|------|
 | 00 | [Overview](docs/00-overview.md) | Understand the end state and prerequisites | 5 min |
 | 01 | [Assign Visual Studio licenses](docs/01-assign-visual-studio-licenses.md) | Activate VS Enterprise benefit in Partner Center | 10 min |
 | 02 | [Set up the developer subscription](docs/02-set-up-developer-subscription.md) | Provision the M365 E5 Instant Sandbox | 15–30 min |
 | 03 | [Prepare the developer subscription](docs/03-prepare-the-developer-subscription.md) | Edge profile, M365 groups, audit, container labels | 30 min |
+
+### Path B — CDX/MDX demo tenant
+
+For partners running the lab on a Microsoft Customer Demo Experience tenant.
+
+- [Before the Lab — CDX/MDX tenant](CDX/MDX/before-the-lab.md) — create the CDX env, Edge profiles, HR group, enable audit, migrate to the modern label scheme.
 
 ## Prerequisites
 
@@ -23,7 +35,7 @@ Companion to the parent guide: [hekuosa/Data-Security-Hack](https://github.com/h
 ## Repository layout
 
 ```
-docs/
+docs/                              # Path A — M365 Developer subscription
 ├── 00-overview.md
 ├── 01-assign-visual-studio-licenses.md
 ├── 02-set-up-developer-subscription.md
@@ -34,6 +46,13 @@ docs/
     ├── Deploy-TenantBaseline.ps1
     ├── Config/
     └── Modules/
+
+CDX/MDX/                           # Path B — CDX demo tenant
+├── before-the-lab.md
+└── images/
+
+HTML/                              # Static viewer for the markdown docs
+└── index.html
 ```
 
 ## License
