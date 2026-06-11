@@ -1,12 +1,12 @@
 # Before the Lab
 
-Pre-lab setup guide for the **Data Security Hack**. Walks a Microsoft partner from a fresh Visual Studio Enterprise subscription through a fully prepared Microsoft 365 E5 sandbox tenant, ready to begin the lab exercises.
-
-Companion to the parent guide: [hekuosa/Data-Security-Hack](https://github.com/hekuosa/Data-Security-Hack).
+Pre-lab setup guide for the **Data Security Hack To Build**.
 
 ## Reading order
 
 The repo covers two pre-lab paths. Pick the one that matches how you will run the lab:
+**Path A — Microsoft 365 Developer Subscription** (preferred)
+**Path B — CDX demo tenant***
 
 ### Path A — Microsoft 365 Developer Subscription
 
@@ -29,12 +29,6 @@ For partners running the lab on a Microsoft Customer Demo Experience tenant.
 | 02 | [Create Edge profiles](CDX-Environment/docs/02-create-edge-profiles.md) | Set up dedicated Edge profiles for admin and lab users |
 | 03 | [Prepare the CDX environment](CDX-Environment/docs/03-prepare-the-cdx-environment.md) | HR group, enable audit, modern label scheme |
 
-## Prerequisites
-
-- Microsoft AI Cloud Partner Program membership with available Visual Studio Enterprise subscriptions ([benefit table](M365-E5-Developer-Subscription/docs/01-assign-visual-studio-licenses.md#visual-studio-enterprise-subscriptions-by-program))
-- Microsoft Edge browser
-- PowerShell 7+ (`pwsh`) for the tenant baseline script
-- A tenant admin account on the new sandbox (created in step 02)
 
 ## Repository layout
 
