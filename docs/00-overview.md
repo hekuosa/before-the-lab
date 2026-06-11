@@ -20,10 +20,4 @@ The Microsoft 365 Developer Program **Instant Sandbox** is a fully pre-configure
 
 > **Important:** You are not charged for the free E5 developer sandbox. Billing details are required only for account verification and to enable future add-on purchases.
 
-# Troubleshooting
-
-- **Billing account not appearing in dropdown** — Select the **Refresh (↺)** icon next to the **Billing account** dropdown. Allow a few seconds after completing billing account creation before refreshing.
-- **Set up button remains greyed out** — Ensure all required fields (**Billing account**, **Billing profile**, and **Invoice section**) are selected. All three dropdowns must have a value before the **Set up** button becomes active.
-- **Provisioning takes longer than expected** — The Instant Sandbox typically provisions within minutes. If it takes longer, refresh the Developer Program dashboard. If the issue persists, contact Microsoft 365 Developer Program support.
-
   
