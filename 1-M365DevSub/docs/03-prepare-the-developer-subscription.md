@@ -139,7 +139,7 @@ You will be asked to confirm `Proceed with deployment? [y/N]`. The script then:
 
 A summary block prints when the run completes, e.g.:
 
-```
+```powershell
 ==============================================================================
   Deployment summary  (elapsed: 00:01:49)
 ==============================================================================
