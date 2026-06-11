@@ -1,25 +1,3 @@
-
-## Create your Microsoft 365 Developer subscription (E5)
-
-1. Go to the [Visual Studio subscriptions portal](https://my.visualstudio.com/) and sign in with your work email.
-2. Find the **Microsoft 365 Developer subscription (E5)** user benefits. The available benefits and layout may differ slightly from the reference image below.
-
-   ![Visual Studio subscriptions portal showing the Microsoft 365 E5 developer benefit tile](images/before-the-lab-developer-subscription-002-ba712176.png)
-
-3. Complete the setup wizard as shown in the images below.
-
-   ![Microsoft 365 E5 developer subscription activation, step 1](images/before-the-lab-developer-subscription-003-86180d0f.png)
-
-   ![Microsoft 365 E5 developer subscription activation, step 2](images/before-the-lab-developer-subscription-004-098e7067.png)
-
-4. When you reach the **Set up your Microsoft 365 E5 sandbox** view, select **Instant sandbox** (step 5 in the wizard). The username you choose here will be your **admin user** (step 6 in the wizard).
-
-   ![Set up your Microsoft 365 E5 sandbox — Instant sandbox option](images/before-the-lab-developer-subscription-005-31db3914.png)
-
-   ![Choosing the admin user account during sandbox setup](images/before-the-lab-developer-subscription-006-fac6e5d2.png)
-
-> **Verify:** the new tenant is provisioned and you have the admin user's username (e.g. `admin@<yourtenant>.onmicrosoft.com`) and initial password.
-
 ## Create a new Edge profile
 
 Use a dedicated Edge profile for this lab to avoid conflicts with InPrivate browsing and cached sign-in state from your real account.
