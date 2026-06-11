@@ -15,7 +15,7 @@
    - Keep **Add Microsoft Teams to your group** selected.
 8. Review the settings, then select **Create group**.
 
-   ![New Microsoft 365 group settings — HR, Private, Teams enabled](../images/cdx-mdx-006.png)
+   ![New Microsoft 365 group settings — HR, Private, Teams enabled](../images/cdx-mdx-006-new.png)
 
 
 # Enable Audit
