@@ -120,7 +120,7 @@ References:
 Open a **fresh `pwsh` window** and preview the changes without touching the tenant:
 
 ```powershell
-cd <repo-root>\docs\scripts
+cd <repo-root>\M365 E5 Developer Subscription\scripts
 .\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules  -WhatIf
 ```
 
@@ -133,7 +133,7 @@ You will see four browser sign-in prompts (EXO, IPPS, SPO, Graph). Choose **No, 
 Re-run the same command without `-WhatIf`:
 
 ```powershell
-cd <repo-root>\docs\scripts
+cd <repo-root>\M365 E5 Developer Subscription\scripts
 .\Deploy-TenantBaseline.ps1 -TenantAdminUpn admin@<yourtenant>.onmicrosoft.com  -AutoInstallModules
 ```
 You will be asked to confirm `Proceed with deployment? [y/N]`. The script then:

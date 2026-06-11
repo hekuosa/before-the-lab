@@ -101,10 +101,10 @@
 
 <script>
   const DOCS = [
-    { group: 'Setup steps', num: '00', title: 'Overview',                          file: '../docs/00-overview.md',                          dir: '../docs/' },
-    { group: 'Setup steps', num: '01', title: 'Assign Visual Studio licenses',     file: '../docs/01-assign-visual-studio-licenses.md',     dir: '../docs/' },
-    { group: 'Setup steps', num: '02', title: 'Set up the developer subscription', file: '../docs/02-set-up-developer-subscription.md',     dir: '../docs/' },
-    { group: 'Setup steps', num: '03', title: 'Prepare the developer subscription',file: '../docs/03-prepare-the-developer-subscription.md',dir: '../docs/' },
+    { group: 'Setup steps', num: '00', title: 'Overview',                          file: '../M365 E5 Developer Subscription/00-overview.md',                          dir: '../M365 E5 Developer Subscription/' },
+    { group: 'Setup steps', num: '01', title: 'Assign Visual Studio licenses',     file: '../M365 E5 Developer Subscription/01-assign-visual-studio-licenses.md',     dir: '../M365 E5 Developer Subscription/' },
+    { group: 'Setup steps', num: '02', title: 'Set up the developer subscription', file: '../M365 E5 Developer Subscription/02-set-up-developer-subscription.md',     dir: '../M365 E5 Developer Subscription/' },
+    { group: 'Setup steps', num: '03', title: 'Prepare the developer subscription',file: '../M365 E5 Developer Subscription/03-prepare-the-developer-subscription.md',dir: '../M365 E5 Developer Subscription/' },
     { group: 'CDX Environment', num: '01', title: 'Create a CDX environment',      file: '../CDX Environment/docs/01-create-a-cdx-environment.md',     dir: '../CDX Environment/docs/' },
     { group: 'CDX Environment', num: '02', title: 'Create Edge profiles',           file: '../CDX Environment/docs/02-create-edge-profiles.md',         dir: '../CDX Environment/docs/' },
     { group: 'CDX Environment', num: '03', title: 'Prepare the CDX environment',    file: '../CDX Environment/docs/03-prepare-the-cdx-environment.md',  dir: '../CDX Environment/docs/' }
@@ -190,7 +190,7 @@
     }
   }
 
-  // Deep link support (#../docs/00-overview.md)
+  // Deep link support (#../M365 E5 Developer Subscription/00-overview.md)
   const hash = decodeURIComponent(location.hash.slice(1));
   const initialIdx = Math.max(0, DOCS.findIndex(d => d.file === hash));
   loadDoc(initialIdx);
