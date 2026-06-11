@@ -58,15 +58,15 @@ Remove **Nestor Wilke** from the existing **U.S. Sales** group so that later DLP
 
 ## Enable audit and sensitivity labelling for containers
 
-With the M365 groups in place, switch to PowerShell (or the equivalent admin portals) to apply tenant-wide settings. The toolkit in [`scripts/`](../scripts/) configures every foundational Purview tenant setting in a single, idempotent run:
+After creating the Microsoft 365 groups, use PowerShell (or the admin portals) to apply tenant-wide settings. The scripts in [`scripts/`](../scripts/) configure the required Microsoft Purview tenant settings in one run:
 
-- Unified Audit Log ingestion (Exchange Online)
-- SharePoint sensitivity-label support (`EnableAIPIntegration`)
-- SharePoint PDF sensitivity labels
-- Office label co-authoring (`EnableLabelCoauth`)
-- Container labels for Microsoft 365 Groups, Teams, and SharePoint sites (`Group.Unified` `EnableMIPLabels`)
-
-> **Recommended:** use Option 2 (the PowerShell orchestrator). It is idempotent, prompts before applying changes, and supports `-WhatIf` for a dry run. Option 1 walks you through the underlying portal/cmdlet steps via Microsoft Learn — useful if you want to learn the manual flow.
+   - Enable Unified Audit Log ingestion (Exchange Online)
+   - Enable sensitivity labels in SharePoint (EnableAIPIntegration)
+   - Enable PDF sensitivity labels in SharePoint
+   - Enable label co-authoring in Office (EnableLabelCoauth)
+   - Enable container labels for Microsoft 365 Groups, Teams, and SharePoint sites (Group.Unified, EnableMIPLabels)
+     
+> **Tip:** Use Option 2 – PowerShell orchestrator for the fastest setup.
 
 ### Option 1 — Manual (portal + cmdlets)
 
@@ -103,7 +103,7 @@ References:
    Execute-AzureAdLabelSync
    ```
 
-### Option 2 — PowerShell orchestrator (recommended)
+### Option 2 — PowerShell orchestrator (faster)
 
 #### Prerequisites
 
